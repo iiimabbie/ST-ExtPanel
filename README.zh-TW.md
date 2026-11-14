@@ -1,8 +1,21 @@
-[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
+<div align="center">
+
+[English](README.md) · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
 
 # SillyTavern 擴充功能面板管理器
 
+**整理 SillyTavern 的擴充功能頁面**
+
 隱藏、排序及跨欄移動面板，整理 SillyTavern 的擴充功能設定頁面。介面語言會跟隨 SillyTavern 的語言設定。
+
+![Version](https://img.shields.io/github/manifest-json/v/iiimabbie/ST-ExtPanel?label=version&color=8a5cf6)
+![SillyTavern](https://img.shields.io/badge/SillyTavern-extension-e8a87c)
+![i18n](https://img.shields.io/badge/i18n-繁中%20·%20简中%20·%20EN-2ea44f)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)
+
+[功能](#功能) · [安裝方式](#安裝方式) · [使用方式](#使用方式)
+
+</div>
 
 ## 功能
 
@@ -27,5 +40,3 @@
 3. 點選**儲存**以儲存設定，或點選**取消**捨棄版面變更。
 
 進入編輯模式時會收合已展開的抽屜；取消會還原版面，但不會還原抽屜的展開狀態。
-
-本專案以 [CC BY-NC-SA 4.0](LICENSE) 授權。
