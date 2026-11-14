@@ -6,18 +6,40 @@
 
 #ext-panel-edit-controls {
     display: inline-flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    white-space: nowrap;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
+}
+
+/* 編輯按鈕組不拆行時，避免把 ST 的標題擠成直排。 */
+.extensions_block > .flex-container > h3 {
+    white-space: nowrap;
+}
+
+#ext-panel-edit-count {
+    font-size: 0.9em;
+    opacity: 0.75;
 }
 
 #ext-panel-save {
-    border: 2px solid var(--active);
+    background-color: var(--active);
+    color: #fff;
+    border-color: var(--active);
     filter: none;
+    opacity: 1;
 }
 
-#ext-panel-save i {
-    color: var(--active);
+#ext-panel-save:hover {
+    filter: brightness(1.1);
+}
+
+@media (max-width: 1400px) {
+    #ext-panel-save span,
+    #ext-panel-cancel span {
+        display: none;
+    }
 }
 
 /* 隱藏狀態不修改擴充功能的行內樣式。 */
