@@ -4,8 +4,20 @@
     white-space: nowrap;
 }
 
-#ext-panel-manage-btn.active {
-    background: var(--active-item-bg, rgba(74, 158, 255, 0.2));
+#ext-panel-edit-controls {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#ext-panel-save {
+    border: 2px solid var(--active);
+    filter: none;
+}
+
+#ext-panel-save i {
+    color: var(--active);
 }
 
 /* 隱藏狀態不修改擴充功能的行內樣式。 */
@@ -55,34 +67,4 @@
 /* 編輯模式下條目可拖拽 */
 .ext-panel-editing > .ext-panel-managed {
     cursor: grab;
-}
-
-/* 浮動確認/取消面板 */
-#ext-panel-float-wrapper {
-    position: sticky;
-    bottom: 10px;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-    padding: 8px 0;
-}
-
-#ext-panel-float-panel {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    background: var(--SmartThemeChatTintColor, rgba(0,0,0,0.85));
-    border: 1px solid var(--border-color, rgba(255,255,255,0.15));
-    border-radius: 8px;
-    pointer-events: all;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-}
-
-#ext-panel-float-count {
-    font-size: 13px;
-    opacity: 0.8;
-    min-width: 70px;
-    text-align: center;
 }

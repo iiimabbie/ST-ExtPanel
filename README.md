@@ -24,7 +24,7 @@ Organize the panels on SillyTavern's Extensions settings page by hiding, reorder
 
 1. In the Extensions panel, click **管理面板** next to the install button.
 2. Use the checkboxes to set panel visibility; hidden panels appear translucent while editing. Drag headers to arrange panels.
-3. Click the checkmark button (tooltip **確認**) to save, or the X button (tooltip **取消**) to discard the layout changes.
+3. Click **儲存** to save, or **取消** to discard the layout changes.
 
 Entering edit mode collapses open drawers; cancelling restores the layout, but not their expanded state.
 

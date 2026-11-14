@@ -101,28 +101,25 @@ function enterEditMode() {
         checkbox.onclick = e => e.stopPropagation();
         checkbox.onchange = () => {
             container.classList.toggle('ext-panel-hidden', !checkbox.checked);
-            updateFloatingCount();
+            updateEditCount();
         };
         header.insertBefore(checkbox, header.firstChild);
     });
 
-    const wrapper = document.createElement('div');
-    wrapper.id = 'ext-panel-float-wrapper';
-    wrapper.innerHTML = `
-        <div id="ext-panel-float-panel">
-            <span id="ext-panel-float-count"></span>
-            <div id="ext-panel-float-finish" class="menu_button menu_button_icon" title="確認">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <div id="ext-panel-float-cancel" class="menu_button menu_button_icon" title="取消">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>`;
-    document.getElementById('rm_extensions_block').appendChild(wrapper);
-    wrapper.querySelector('#ext-panel-float-finish').onclick = confirmEditMode;
-    wrapper.querySelector('#ext-panel-float-cancel').onclick = cancelEditMode;
-    updateFloatingCount();
-    updateManageBtn(true);
+    const group = document.createElement('div');
+    group.id = 'ext-panel-edit-controls';
+    group.innerHTML = `
+        <span id="ext-panel-edit-count"></span>
+        <button id="ext-panel-save" type="button" class="menu_button menu_button_icon">
+            <i class="fa-solid fa-check"></i><span>儲存</span>
+        </button>
+        <button id="ext-panel-cancel" type="button" class="menu_button menu_button_icon">
+            <i class="fa-solid fa-xmark"></i><span>取消</span>
+        </button>`;
+    document.getElementById('ext-panel-manage-btn').replaceWith(group);
+    group.querySelector('#ext-panel-save').onclick = confirmEditMode;
+    group.querySelector('#ext-panel-cancel').onclick = cancelEditMode;
+    updateEditCount();
 }
 
 function managedTarget(e) {
@@ -185,10 +182,10 @@ function blockHeaderClick(e) {
     }
 }
 
-function updateFloatingCount() {
+function updateEditCount() {
     const items = Array.from(markedPanels.keys());
     const visible = items.filter(el => !el.classList.contains('ext-panel-hidden')).length;
-    document.getElementById('ext-panel-float-count').textContent = `顯示 ${visible} / ${items.length}`;
+    document.getElementById('ext-panel-edit-count').textContent = `顯示 ${visible} / ${items.length}`;
 }
 
 function confirmEditMode() {
@@ -229,15 +226,10 @@ function cleanupEditUI() {
     });
     markedPanels.clear();
     dragSrc = null;
-    document.getElementById('ext-panel-float-wrapper')?.remove();
+    document.getElementById('ext-panel-edit-controls').replaceWith(createManageButton());
     observer.takeRecords();
     isEditing = false;
     if (hasNewPanels) applyStoredState();
-    updateManageBtn(false);
-}
-
-function updateManageBtn(active) {
-    document.getElementById('ext-panel-manage-btn')?.classList.toggle('active', active);
 }
 
 function createManageButton() {
@@ -248,11 +240,11 @@ function createManageButton() {
     btn.setAttribute('role', 'button');
     btn.title = '管理擴充功能面板';
     btn.innerHTML = '<i class="fa-solid fa-table-columns"></i><span>管理面板</span>';
-    btn.onclick = () => isEditing ? cancelEditMode() : enterEditMode();
-    document.getElementById('third_party_extension_button').insertAdjacentElement('afterend', btn);
+    btn.onclick = enterEditMode;
+    return btn;
 }
 
-createManageButton();
+document.getElementById('third_party_extension_button').insertAdjacentElement('afterend', createManageButton());
 columns.forEach(col => {
     col.addEventListener('click', blockHeaderClick, true);
     col.addEventListener('dragstart', onDragStart);
