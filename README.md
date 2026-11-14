@@ -1,39 +1,31 @@
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-[中文 (繁體)](README.zh-TW.md)
-
----
+[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
 
 # Extension Panel Manager for SillyTavern
 
-A SillyTavern extension that lets you customize the Extensions settings page — hide panels you don't use, reorder them, and move them between columns. Settings are saved automatically and restored on every page load.
+Organize the panels on SillyTavern's Extensions settings page by hiding, reordering, and moving them between columns.
 
-## Key Features
+## Features
 
-- **Show / Hide Panels**: Toggle visibility of any extension panel with a checkbox. Hidden panels remain installed — they just won't clutter the screen.
-- **Drag & Drop Reorder**: Drag panels to rearrange them within or across columns. Cross-column drag is fully supported.
-- **Persistent Layout**: Your layout (visibility, order, column placement) is saved to `localStorage` and applied automatically on page load.
-- **Non-destructive**: Canceling edit mode fully restores the previous state. No settings are changed until you confirm.
-- **Lightweight**: No dependencies. Integrates directly into the existing Extensions UI.
+- Show or hide managed panels without uninstalling their extensions.
+- Drag panel headers to reorder panels or move them between the two columns.
+- Save visibility, order, and column placement in the browser's `localStorage` when you confirm. The saved layout is applied on page load.
+- Cancel editing to restore the previous visibility, order, and column placement.
 
-## Usage
-
-1. Open the **Extensions** tab in SillyTavern.
-2. Click the **管理面板** button (next to the "Install Extension" button).
-3. Edit mode activates:
-   - All panels become visible (hidden ones appear at reduced opacity).
-   - Each panel shows a **checkbox** to toggle visibility.
-   - Drag any panel by its header to reorder or move it to another column.
-4. Click the **confirm** button to save, or the **cancel** button to restore the previous layout.
+> [!NOTE]
+> Managed panels are direct children of the two settings columns that contain an inline drawer header. Nested drawers follow their parent panel's visibility. On page load, saved ordering is applied to panels already present; panels loaded later are only checked for saved visibility, for up to 15 seconds.
 
 ## Installation
 
-1. Copy the repository URL: `https://github.com/lilminzyu/ST-ExtPanel`
-2. Open the **Extensions** tab in SillyTavern.
-3. Click **Install Extension** (top-right).
-4. Paste the URL and install.
-5. Ensure **Extension Panel Manager** is enabled in the list.
+1. Open the Extensions panel in SillyTavern and click **Install extension**.
+2. Enter `https://github.com/iiimabbie/ST-ExtPanel` and install it.
+3. Ensure **Extension Panel Manager** is enabled.
 
-## License
+## Usage
 
-This project is licensed under the terms of the [LICENSE](LICENSE) file.
+1. In the Extensions panel, click **管理面板** next to the install button.
+2. Use the checkboxes to set panel visibility; hidden panels appear translucent while editing. Drag headers to arrange panels.
+3. Click the checkmark button (tooltip **確認**) to save, or the X button (tooltip **取消**) to discard the layout changes.
+
+Entering edit mode collapses open drawers; cancelling restores the layout, but not their expanded state.
+
+This project is licensed under [CC BY-NC-SA 4.0](LICENSE).
