@@ -1,8 +1,21 @@
-[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
+<div align="center">
+
+[English](README.md) · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
 
 # SillyTavern 扩展面板管理器
 
+**整理 SillyTavern 的扩展程序页面**
+
 通过隐藏、排序和跨列移动面板，整理 SillyTavern 的扩展程序设置页面。界面语言会跟随 SillyTavern 的语言设置。
+
+![Version](https://img.shields.io/github/manifest-json/v/iiimabbie/ST-ExtPanel?label=version&color=8a5cf6)
+![SillyTavern](https://img.shields.io/badge/SillyTavern-extension-e8a87c)
+![i18n](https://img.shields.io/badge/i18n-繁中%20·%20简中%20·%20EN-2ea44f)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)
+
+[功能](#功能) · [安装方法](#安装方法) · [使用方法](#使用方法)
+
+</div>
 
 ## 功能
 
@@ -27,5 +40,3 @@
 3. 点击**保存**保存设置，或点击**取消**放弃布局更改。
 
 进入编辑模式时会收起已展开的抽屉；取消会恢复布局，但不会恢复抽屉的展开状态。
-
-本项目采用 [CC BY-NC-SA 4.0](LICENSE) 许可。

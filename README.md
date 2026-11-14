@@ -1,8 +1,21 @@
-[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
+<div align="center">
+
+[English](README.md) · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
 
 # Extension Panel Manager for SillyTavern
 
+**Tidy up SillyTavern's Extensions page**
+
 Organize panels on SillyTavern's Extensions settings page by hiding, reordering, and moving them between columns. The interface follows SillyTavern's language setting.
+
+![Version](https://img.shields.io/github/manifest-json/v/iiimabbie/ST-ExtPanel?label=version&color=8a5cf6)
+![SillyTavern](https://img.shields.io/badge/SillyTavern-extension-e8a87c)
+![i18n](https://img.shields.io/badge/i18n-繁中%20·%20简中%20·%20EN-2ea44f)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)
+
+[Features](#features) · [Installation](#installation) · [Usage](#usage)
+
+</div>
 
 ## Features
 
@@ -27,5 +40,3 @@ Organize panels on SillyTavern's Extensions settings page by hiding, reordering,
 3. Click **Save** to save, or **Cancel** to discard the layout changes.
 
 Entering edit mode collapses open drawers; cancelling restores the layout, but not their expanded state.
-
-This project is licensed under [CC BY-NC-SA 4.0](LICENSE).
