@@ -1,5 +1,7 @@
 // Extension Panel Manager
 
+import { t } from '../../../i18n.js';
+
 const STORAGE_KEY = 'ext_panel_manager_state';
 const columns = [document.getElementById('extensions_settings'), document.getElementById('extensions_settings2')];
 let isEditing = false;
@@ -97,7 +99,7 @@ function enterEditMode() {
         checkbox.type = 'checkbox';
         checkbox.className = 'ext-panel-checkbox';
         checkbox.checked = !container.classList.contains('ext-panel-hidden');
-        checkbox.title = '顯示此面板';
+        checkbox.title = t`顯示此面板`;
         checkbox.onclick = e => e.stopPropagation();
         checkbox.onchange = () => {
             container.classList.toggle('ext-panel-hidden', !checkbox.checked);
@@ -110,11 +112,11 @@ function enterEditMode() {
     group.id = 'ext-panel-edit-controls';
     group.innerHTML = `
         <span id="ext-panel-edit-count"></span>
-        <button id="ext-panel-save" type="button" title="儲存" class="menu_button menu_button_icon">
-            <i class="fa-solid fa-check"></i><span>儲存</span>
+        <button id="ext-panel-save" type="button" title="${t`儲存`}" class="menu_button menu_button_icon">
+            <i class="fa-solid fa-check"></i><span>${t`儲存`}</span>
         </button>
-        <button id="ext-panel-cancel" type="button" title="取消" class="menu_button menu_button_icon">
-            <i class="fa-solid fa-xmark"></i><span>取消</span>
+        <button id="ext-panel-cancel" type="button" title="${t`取消`}" class="menu_button menu_button_icon">
+            <i class="fa-solid fa-xmark"></i><span>${t`取消`}</span>
         </button>`;
     document.getElementById('ext-panel-manage-btn').replaceWith(group);
     group.querySelector('#ext-panel-save').onclick = confirmEditMode;
@@ -185,7 +187,7 @@ function blockHeaderClick(e) {
 function updateEditCount() {
     const items = Array.from(markedPanels.keys());
     const visible = items.filter(el => !el.classList.contains('ext-panel-hidden')).length;
-    document.getElementById('ext-panel-edit-count').textContent = `顯示 ${visible} / ${items.length}`;
+    document.getElementById('ext-panel-edit-count').textContent = t`顯示 ${visible} / ${items.length}`;
 }
 
 function confirmEditMode() {
@@ -203,7 +205,7 @@ function confirmEditMode() {
     saveState({ hidden, order: mergedOrder.concat(order.slice(next)) });
     snapshot = null;
     cleanupEditUI();
-    toastr?.success('面板設定已儲存');
+    toastr?.success(t`面板設定已儲存`);
 }
 
 function cancelEditMode() {
@@ -212,7 +214,7 @@ function cancelEditMode() {
     snapshot.hidden.forEach((hidden, el) => el.classList.toggle('ext-panel-hidden', hidden));
     snapshot = null;
     cleanupEditUI();
-    toastr?.info('已取消，還原至修改前');
+    toastr?.info(t`已取消，還原至修改前`);
 }
 
 function cleanupEditUI() {
@@ -238,8 +240,8 @@ function createManageButton() {
     btn.className = 'menu_button menu_button_icon interactable';
     btn.tabIndex = 0;
     btn.setAttribute('role', 'button');
-    btn.title = '管理擴充功能面板';
-    btn.innerHTML = '<i class="fa-solid fa-table-columns"></i><span>管理面板</span>';
+    btn.title = t`管理擴充功能面板`;
+    btn.innerHTML = `<i class="fa-solid fa-table-columns"></i><span>${t`管理面板`}</span>`;
     btn.onclick = enterEditMode;
     return btn;
 }
