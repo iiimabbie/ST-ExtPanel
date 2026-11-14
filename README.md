@@ -12,7 +12,7 @@ Organize the panels on SillyTavern's Extensions settings page by hiding, reorder
 - Cancel editing to restore the previous visibility, order, and column placement.
 
 > [!NOTE]
-> Managed panels are direct children of the two settings columns that contain an inline drawer header. Nested drawers follow their parent panel's visibility. On page load, saved ordering is applied to panels already present; panels loaded later are only checked for saved visibility, for up to 15 seconds.
+> Managed panels are direct children of the two settings columns that have an ID and contain an inline drawer header. Nested drawers follow their parent panel's visibility. On page load, saved ordering and visibility are applied as panels appear, for up to 15 seconds.
 
 ## Installation
 
