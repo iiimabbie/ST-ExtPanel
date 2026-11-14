@@ -12,7 +12,7 @@ Organize the panels on SillyTavern's Extensions settings page by hiding, reorder
 - Cancel editing to restore the previous visibility, order, and column placement.
 
 > [!NOTE]
-> Managed panels are direct children of the two settings columns that contain an inline drawer header. Nested drawers follow their parent panel's visibility. On page load, saved ordering is applied to panels already present; panels loaded later are only checked for saved visibility, for up to 15 seconds.
+> Managed panels are direct children of the two settings columns that have an ID and contain an inline drawer header. Nested drawers follow their parent panel's visibility. On page load, saved ordering and visibility are applied as panels appear, for up to 15 seconds.
 
 ## Installation
 
@@ -24,7 +24,7 @@ Organize the panels on SillyTavern's Extensions settings page by hiding, reorder
 
 1. In the Extensions panel, click **管理面板** next to the install button.
 2. Use the checkboxes to set panel visibility; hidden panels appear translucent while editing. Drag headers to arrange panels.
-3. Click the checkmark button (tooltip **確認**) to save, or the X button (tooltip **取消**) to discard the layout changes.
+3. Click **儲存** to save, or **取消** to discard the layout changes.
 
 Entering edit mode collapses open drawers; cancelling restores the layout, but not their expanded state.
 
