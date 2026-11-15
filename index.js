@@ -113,10 +113,10 @@ function enterEditMode() {
     group.innerHTML = `
         <span id="ext-panel-edit-count"></span>
         <button id="ext-panel-save" type="button" title="${t`儲存`}" class="menu_button menu_button_icon">
-            <i class="fa-solid fa-check"></i><span>${t`儲存`}</span>
+            <i class="fa-solid fa-check"></i>
         </button>
         <button id="ext-panel-cancel" type="button" title="${t`取消`}" class="menu_button menu_button_icon">
-            <i class="fa-solid fa-xmark"></i><span>${t`取消`}</span>
+            <i class="fa-solid fa-xmark"></i>
         </button>`;
     document.getElementById('ext-panel-manage-btn').replaceWith(group);
     group.querySelector('#ext-panel-save').onclick = confirmEditMode;
