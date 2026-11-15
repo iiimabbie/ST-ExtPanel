@@ -13,14 +13,15 @@
     gap: 5px;
 }
 
-/* 編輯按鈕組不拆行時，避免把 ST 的標題擠成直排。 */
-.extensions_block > .flex-container > h3 {
-    white-space: nowrap;
+/* 編輯模式只留標題與編輯按鈕組，隱藏 ST 原生的更新通知、管理與安裝。 */
+.extensions_block > .flex-container:has(#ext-panel-edit-controls) > :is(label[for="extensions_notify_updates"], #extensions_details, #third_party_extension_button) {
+    display: none;
 }
 
 #ext-panel-edit-count {
     font-size: 0.9em;
     opacity: 0.75;
+    margin-right: 2px;
 }
 
 #ext-panel-save {
@@ -33,13 +34,6 @@
 
 #ext-panel-save:hover {
     filter: brightness(1.1);
-}
-
-@media (max-width: 1400px) {
-    #ext-panel-save span,
-    #ext-panel-cancel span {
-        display: none;
-    }
 }
 
 /* 隱藏狀態不修改擴充功能的行內樣式。 */

@@ -37,6 +37,6 @@ Organize panels on SillyTavern's Extensions settings page by hiding, reordering,
 
 1. In Extensions, click **Manage Panels** next to the install button.
 2. Use the checkboxes to set panel visibility; hidden panels appear translucent while editing. Drag headers to arrange panels.
-3. Click **Save** to save, or **Cancel** to discard the layout changes.
+3. Click the check mark to save, or the cross to discard the layout changes. The native update notice, manage, and install controls are hidden while editing.
 
 Entering edit mode collapses open drawers; cancelling restores the layout, but not their expanded state.
