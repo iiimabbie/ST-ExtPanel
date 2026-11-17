@@ -3,6 +3,10 @@
 import { t } from '../../../i18n.js';
 
 const STORAGE_KEY = 'ext_panel_manager_state';
+const AUTHOR_PORTFOLIO_URL = 'https://classy-christmas-5c1.notion.site/Rainori-4188b3769594807babe7d3fd4074d118';
+const versionInfo = fetch(new URL('manifest.json', import.meta.url))
+    .then(r => r.json())
+    .then(m => `v${m.version} © <a href="${AUTHOR_PORTFOLIO_URL}" target="_blank" rel="noopener">${m.author}</a>`);
 const columns = [document.getElementById('extensions_settings'), document.getElementById('extensions_settings2')];
 let isEditing = false;
 let snapshot = null;
@@ -117,10 +121,12 @@ function enterEditMode() {
         </button>
         <button id="ext-panel-cancel" type="button" title="${t`取消`}" class="menu_button menu_button_icon">
             <i class="fa-solid fa-xmark"></i>
-        </button>`;
+        </button>
+        <span id="ext-panel-version-info"></span>`;
     document.getElementById('ext-panel-manage-btn').replaceWith(group);
     group.querySelector('#ext-panel-save').onclick = confirmEditMode;
     group.querySelector('#ext-panel-cancel').onclick = cancelEditMode;
+    versionInfo.then(html => { group.querySelector('#ext-panel-version-info').innerHTML = html; });
     updateEditCount();
 }
 
