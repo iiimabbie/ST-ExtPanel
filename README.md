@@ -11,7 +11,7 @@ Organize panels on SillyTavern's Extensions settings page by hiding, reordering,
 ![Version](https://img.shields.io/github/manifest-json/v/iiimabbie/ST-ExtPanel?label=version&color=8a5cf6)
 ![SillyTavern](https://img.shields.io/badge/SillyTavern-extension-e8a87c)
 ![i18n](https://img.shields.io/badge/i18n-繁中%20·%20简中%20·%20EN-2ea44f)
-![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-lightgrey)
 
 [Features](#features) · [Installation](#installation) · [Usage](#usage)
 
